@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 12 - The Music Player Application</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/player.js" defer></script>
+    <style>
+        body {
+            padding-top: 40px;
+            padding-left: 40px;
+        }
+      .flex-container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Music Player</h1>
+    <!-- ADD DROP DOWN MENU -->
+    <br>
+    <div class="flex-container">
+      <div class="dropdown">
+        <button
+          class="btn btn-outline-success dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Choose the Album
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#" id="option1">'Operation Ivy', Energy</a>
+          <a class="dropdown-item" href="#" id="option2">'Blink 182', Dude Ranch</a>
+          <a class="dropdown-item" href="#"
+          id="option3">'New Found Glory', Sticks and Stones</a
+          >
+        </div>
+      </div>
+      <!-- ADD PLAY BUTTON -->
+      <button type="button" class="btn btn-success" id="play">Play</button>
+    </div>
+    <!-- ADD SHOW FAVORITE ALBUM BUTTON -->
+    <br />
+    <br />
+    <br />
+    <button type="button" class="btn btn-secondary btn-lg" id="btnFavAlbum" >
+      Show my favorite album
+    </button>
+    <br>
+    <br>
+    <br>
+    <p id="favoriteAlbum"></p>
+
+    <script>
+      $(function () {
+        $(".dropdown-menu a").click(function () {
+          $(".btn#dropdownMenuButton:first-child").text($(this).text());
+          $(".btn#dropdownMenuButton:first-child").val($(this).text());
+        });
+      });
+    </script>
+    
+  </body>
+</html>
